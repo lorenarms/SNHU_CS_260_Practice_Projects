@@ -7,6 +7,7 @@
 #include "SortingLists.h"
 #include "SelectionSort.cpp"
 #include "QuickSort.cpp"
+#include "InsertionSort.cpp"
 
 
 using namespace std;
@@ -27,7 +28,7 @@ int main() {
   
     MergeSort(numbers, 0, NUMBERS_SIZE - 1);
     QuickSort(numbers, 0, NUMBERS_SIZE - 1);
-
+    InsertionSort(numbers, NUMBERS_SIZE - 1);
     SelectionSort(numbers, NUMBERS_SIZE);
 
     cout << "SORTED: ";
