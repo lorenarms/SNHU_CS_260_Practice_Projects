@@ -23,7 +23,7 @@ class Hash
 
 	// Pointer to an array containing buckets
 	list<int>* table;
-	//list<Bid>* bidTable;
+	list<Bid>* bidTable;
 
 public:
 	Hash(int V); // Constructor
@@ -52,9 +52,10 @@ Hash::Hash(int b)
 void Hash::insertItem(int key)
 {
 	Bid bid;
-	int index = hashFunction(key);
+	int index = hashFunction(bid.data);
+	//int index = hashFunction(key);
 	table[index].push_back(key);
-	//bidTable[index].push_back(bid);
+	bidTable[index].push_back(bid);
 }
 
 void Hash::deleteItem(int key)
@@ -65,6 +66,7 @@ void Hash::deleteItem(int key)
 	// find the key in (index)th list
 	list <int> ::iterator i;
 	for (i = table[index].begin(); i != table[index].end(); i++) {
+		
 		if (*i == key)
 			break;
 	}
@@ -85,7 +87,7 @@ void Hash::displayHash() {
 }
 
 // Driver program
-int main()
+//int main()
 {
 	// array that contains keys to be mapped
 	int a[] = { 15, 15, 8, 8, 11, 27, 8, 12 ,15};
@@ -121,10 +123,7 @@ int main()
 
 	// delete 12 from hash table
 	h.deleteItem(15);
-	h.deleteItem(15);
-	h.deleteItem(15);
-	h.deleteItem(15);
-
+	
 	// display the Hash table
 	h.displayHash();
 
