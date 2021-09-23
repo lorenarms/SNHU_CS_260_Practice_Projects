@@ -98,11 +98,12 @@ Node* deletion(struct Node* root, int key)
             q.push(temp->right);
     }
 
-    if (key_node != NULL) {
+    /*if (key_node != NULL) {
+        
         int x = temp->key;
         deletDeepest(root, temp);
         key_node->key = x;
-    }
+    }*/
     return root;
 }
 
