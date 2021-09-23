@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d491606c-86d3-42e3-af48-d7d13bd830c3}</ProjectGuid>
-    <RootNamespace>Module016BinaryTrees</RootNamespace>
+    <ProjectGuid>{620e16ac-70a0-4e71-bf5f-e55096a450a4}</ProjectGuid>
+    <RootNamespace>Module0161BinaryTrees</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Module_01.6.0_BinaryTrees</ProjectName>
+    <ProjectName>Module_01.6.1_BinaryTrees</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -13,7 +13,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_01.4_SortingLists", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_01.5_HashTables", "Module_01.5_HashTables\Module_01.5_HashTables.vcxproj", "{B74E44B3-4898-4AA0-8BF6-CD26F3E4E87E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_01.6_BinaryTrees", "Module_01.6_BinaryTrees\Module_01.6_BinaryTrees.vcxproj", "{D491606C-86D3-42E3-AF48-D7D13BD830C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_01.6.0_BinaryTrees", "Module_01.6_BinaryTrees\Module_01.6_BinaryTrees.vcxproj", "{D491606C-86D3-42E3-AF48-D7D13BD830C3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_01.6.1_BinaryTrees", "Module_01.61_BinaryTrees\Module_01.61_BinaryTrees.vcxproj", "{620E16AC-70A0-4E71-BF5F-E55096A450A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{D491606C-86D3-42E3-AF48-D7D13BD830C3}.Release|x64.Build.0 = Release|x64
 		{D491606C-86D3-42E3-AF48-D7D13BD830C3}.Release|x86.ActiveCfg = Release|Win32
 		{D491606C-86D3-42E3-AF48-D7D13BD830C3}.Release|x86.Build.0 = Release|Win32
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Debug|x64.ActiveCfg = Debug|x64
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Debug|x64.Build.0 = Debug|x64
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Debug|x86.ActiveCfg = Debug|Win32
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Debug|x86.Build.0 = Debug|Win32
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Release|x64.ActiveCfg = Release|x64
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Release|x64.Build.0 = Release|x64
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Release|x86.ActiveCfg = Release|Win32
+		{620E16AC-70A0-4E71-BF5F-E55096A450A4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
