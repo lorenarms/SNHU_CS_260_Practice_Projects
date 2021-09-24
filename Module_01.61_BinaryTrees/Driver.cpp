@@ -16,7 +16,7 @@ public:
 	//virtual ~BinaryTree();
 	void Append(int key);
 	void Add(int key);
-	void Remove(int key);
+	void Remove(Node* curr, int key);
 	int Search(int key);
 	void PrintTree(Node* curr);
 	int Size();
@@ -75,13 +75,92 @@ void BinaryTree::Add(int key) {
 
 }
 
+void BinaryTree::Remove(Node* curr, int key) {
+	Node* parent = NULL;
+	//curr = this->root;
+	Node* succ = NULL;
+	Node* tempPar = NULL;
+	cout << "Searching for " << key << endl;
+
+	while (curr != NULL) {
+		if (curr->key == key) {
+			if (!curr->left && !curr->right) {
+				if (!parent) {
+					this->root = NULL;
+				}
+				else if (parent->left == curr) {
+					parent->left = NULL;
+				}
+				else
+					parent->right = NULL;
+			}
+			else if (curr->left && !curr->right) {
+				if (!parent) {
+					this->root = curr->left;
+				}
+				else if (parent->left == curr) {
+					parent->left = curr->left;
+				}
+				else
+					parent->right = curr->left;
+			}
+			else if (!curr->left && curr->right) {
+				if (!parent) {
+					this->root = curr->right;
+				}
+				else if (parent->left == curr) {
+					parent->left = curr->right;
+				}
+				else
+					parent->right = curr->right;
+			}
+			else {
+				
+				succ = curr->right;
+				while (succ->left != NULL) {
+					
+					succ = succ->left;
+				}
+				
+				curr->key = succ->key;
+				Remove(curr->right, succ->key);
+			}
+			return;
+		}
+		else if (curr->key < key) {
+			parent = curr;
+			curr = curr->right;
+		}
+		else {
+			parent = curr;
+			curr = curr->left;
+		}
+		return;
+		
+	}
+	return;
+	
+}
+
 void BinaryTree::PrintTree(Node* curr) {
 	if (curr == NULL) {
 		return;
 	}
 
 	PrintTree(curr->left);
-	cout << curr->key << endl;
+	if (!curr->left && !curr->right) {
+		cout << "00" << " <-L- " << curr->key << " -R-> " << "00" << endl;
+	}
+	else if (!curr->left && curr->right) {
+		cout << "00" << " <-L- " << curr->key << " -R-> " << curr->right->key << endl;
+	}
+	else if (curr->left && !curr->right) {
+		cout << curr->left->key << " <-L- " << curr->key << " -R-> " << "00" << endl;
+	}
+	else {
+		cout << curr->left->key << " <-L- " << curr->key << " -R-> " << curr->right->key << endl;
+	}
+	
 	PrintTree(curr->right);
 
 }
@@ -95,13 +174,27 @@ int main() {
 
 	tree.Add(12);
 	tree.Add(11);
-	tree.Add(13);
+	tree.Add(15);
 	tree.Add(5);
 	tree.Add(56);
 	tree.Add(3);
+	tree.Add(7);
+	tree.Add(13);
+	tree.Add(14);
 
 	tree.PrintTree(tree.GetRoot());
+	int rt = tree.GetRoot()->key;
+	cout << endl << "Root: " << rt << endl;
 
+	tree.Remove(tree.GetRoot(), 12);
+	tree.PrintTree(tree.GetRoot());
+	rt = tree.GetRoot()->key;
+	cout << endl << "Root: " << rt << endl;
+
+	/*tree.Remove(tree.GetRoot(), 13);
+	tree.PrintTree(tree.GetRoot());
+	rt = tree.GetRoot()->key;
+	cout << endl << "Root: " << rt << endl;*/
 
 	cin.get();
 	return 0;
