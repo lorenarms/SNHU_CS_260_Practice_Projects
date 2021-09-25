@@ -13,8 +13,7 @@ class BinaryTree {
 
 public:
 	BinaryTree();
-	//virtual ~BinaryTree();
-	void Append(int key);
+	virtual ~BinaryTree();
 	void Add(int key);
 	void Remove(Node* curr, int key);
 	int Search(int key);
@@ -29,18 +28,18 @@ public:
 
 BinaryTree::BinaryTree() {
 	root = NULL;
-
 }
 
-
+BinaryTree::~BinaryTree() {
+	delete root;
+}
 
 void BinaryTree::Add(int key) {
 	Node* curr = new Node();
 	Node* toAdd = new Node();
 
 	toAdd->key = key;
-	toAdd->left = NULL;
-	toAdd->right = NULL;
+	toAdd->left = toAdd->right = NULL;
 
 	if (this->root == NULL) {
 		this->root = toAdd;
@@ -66,22 +65,14 @@ void BinaryTree::Add(int key) {
 				else {
 					curr = curr->right;
 				}
-
 			}
 		}
-
-		
 	}
-
 }
 
 void BinaryTree::Remove(Node* curr, int key) {
 	Node* parent = NULL;
-	//curr = this->root;
-	Node* succ = NULL;
-	Node* tempPar = NULL;
-	cout << "Searching for " << key << endl;
-
+	
 	while (curr != NULL) {
 		if (curr->key == key) {
 			if (!curr->left && !curr->right) {
@@ -115,13 +106,12 @@ void BinaryTree::Remove(Node* curr, int key) {
 					parent->right = curr->right;
 			}
 			else {
-				
+				Node* succ = NULL;
 				succ = curr->right;
 				while (succ->left != NULL) {
-					
+
 					succ = succ->left;
 				}
-				
 				curr->key = succ->key;
 				Remove(curr->right, succ->key);
 			}
@@ -135,8 +125,6 @@ void BinaryTree::Remove(Node* curr, int key) {
 			parent = curr;
 			curr = curr->left;
 		}
-		return;
-		
 	}
 	return;
 	
