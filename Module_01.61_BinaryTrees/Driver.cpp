@@ -160,21 +160,21 @@ void BinaryTree::PrintTree(Node* curr) {
 int main() {
 	BinaryTree tree;
 
-	tree.Add(12);
-	tree.Add(11);
-	tree.Add(15);
 	tree.Add(5);
-	tree.Add(56);
+	tree.Add(4);
+	tree.Add(6);
+	/*tree.Add(8);
 	tree.Add(3);
-	tree.Add(7);
-	tree.Add(13);
-	tree.Add(14);
+	tree.Add(2);
+	tree.Add(4);*/
+	//tree.Add(13);
+	//tree.Add(14);
 
 	tree.PrintTree(tree.GetRoot());
 	int rt = tree.GetRoot()->key;
 	cout << endl << "Root: " << rt << endl;
 
-	tree.Remove(tree.GetRoot(), 12);
+	tree.Remove(tree.GetRoot(), 5);
 	tree.PrintTree(tree.GetRoot());
 	rt = tree.GetRoot()->key;
 	cout << endl << "Root: " << rt << endl;
